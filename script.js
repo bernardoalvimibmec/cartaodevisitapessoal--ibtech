@@ -7,11 +7,18 @@ const focusButtons = document.querySelectorAll("[data-focus]");
 const focusOutput = document.querySelector("#focus-output");
 
 const focusMessages = {
-    "Front-end": "Agora meu foco principal e Front-end: HTML semantico, CSS responsivo e JavaScript com interacao.",
-    Automacao: "Agora meu foco principal e Automacao: transformar tarefas repetitivas em fluxos mais inteligentes.",
-    Produto: "Agora meu foco principal e Produto: entender pessoas, problemas e requisitos antes de escrever codigo.",
-    Dados: "Agora meu foco principal e Dados: organizar informacoes para apoiar decisoes melhores."
+    "Front-end": "Agora meu foco principal é Front-end: HTML semântico, CSS responsivo e JavaScript com interação.",
+    Automação: "Agora meu foco principal é Automação: transformar tarefas repetitivas em fluxos mais inteligentes.",
+    Produto: "Agora meu foco principal é Produto: entender pessoas, problemas e requisitos antes de escrever código.",
+    Dados: "Agora meu foco principal é Dados: organizar informações para apoiar decisões melhores."
 };
+
+const savedTheme = localStorage.getItem("tema");
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+if (savedTheme === "dark" || (savedTheme === null && prefersDark)) {
+    document.body.classList.add("dark");
+}
 
 menuButton.addEventListener("click", () => {
     const isOpen = menu.classList.toggle("open");
@@ -25,8 +32,16 @@ document.querySelectorAll(".nav-links a").forEach((link) => {
     });
 });
 
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        menu.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+    }
+});
+
 themeButton.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
+    const isDark = document.body.classList.toggle("dark");
+    localStorage.setItem("tema", isDark ? "dark" : "light");
 });
 
 copyButton.addEventListener("click", async () => {
@@ -34,10 +49,14 @@ copyButton.addEventListener("click", async () => {
 
     try {
         await navigator.clipboard.writeText(email);
-        copyStatus.textContent = "Email copiado para a area de transferencia.";
+        copyStatus.textContent = "Email copiado para a área de transferência.";
     } catch {
         copyStatus.textContent = `Email: ${email}`;
     }
+
+    setTimeout(() => {
+        copyStatus.textContent = "";
+    }, 2000);
 });
 
 focusButtons.forEach((button) => {
@@ -46,4 +65,17 @@ focusButtons.forEach((button) => {
         button.classList.add("active");
         focusOutput.textContent = focusMessages[button.dataset.focus];
     });
+});
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("visivel");
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.15 });
+
+document.querySelectorAll(".section, .hero").forEach((element) => {
+    observer.observe(element);
 });

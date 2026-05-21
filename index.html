@@ -3,8 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cartao de visita pessoal de Bernardo Alvim, estudante de Engenharia de Software no Ibmec.">
-    <title>Bernardo Alvim | Cartao de Visita</title>
+    <meta name="description" content="Cartão de visita pessoal de Bernardo Alvim, estudante de Engenharia de Software no Ibmec.">
+    <meta property="og:title" content="Bernardo Alvim — Cartão de Visita">
+    <meta property="og:description" content="Estudante de Engenharia de Software no Ibmec, atleta de basquete e membro da IbTech.">
+    <meta property="og:image" content="Imagens/Pfp-BAlvim.png">
+    <title>Bernardo Alvim | Cartão de Visita</title>
+    <link rel="icon" href="Imagens/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -12,7 +16,7 @@
 </head>
 <body>
     <header class="site-header" id="topo">
-        <nav class="navbar" aria-label="Navegacao principal">
+        <nav class="navbar" aria-label="Navegação principal">
             <a class="brand" href="#topo">BA</a>
             <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">
                 Menu
@@ -20,7 +24,7 @@
             <ul class="nav-links" id="menu">
                 <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#fotos">Fotos</a></li>
-                <li><a href="#video">Video</a></li>
+                <li><a href="#video">Vídeo</a></li>
                 <li><a href="#projetos">Projetos</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
@@ -31,8 +35,8 @@
                 <p class="eyebrow">Engenharia de Software | Ibmec</p>
                 <h1 id="titulo-principal">Bernardo Alvim</h1>
                 <p class="hero-text">
-                    Eu crio solucoes digitais com foco em desenvolvimento web, automacao,
-                    organizacao de processos e aplicacao pratica de tecnologia.
+                    Eu crio soluções digitais com foco em desenvolvimento web, automação,
+                    organização de processos e aplicação prática de tecnologia.
                 </p>
                 <div class="hero-actions">
                     <a class="button primary" href="mailto:bernardoaalvim@gmail.com">Enviar email</a>
@@ -41,8 +45,8 @@
             </div>
 
             <figure class="profile-card">
-                <img src="/Cart-o-de-Visita-Pessoal---IbTech/Imagens/Pfp-BAlvim.png" alt="Foto de perfil de Bernardo Alvim">
-                <figcaption>Aberto a projetos, ligas academicas e oportunidades em tecnologia.</figcaption>
+                <img src="Imagens/Pfp-BAlvim.png" alt="Foto de perfil de Bernardo Alvim">
+                <figcaption>Aberto a projetos, ligas acadêmicas e oportunidades em tecnologia.</figcaption>
             </figure>
         </section>
     </header>
@@ -67,7 +71,7 @@
                         resiliência, comunicação e trabalho em equipe.
                     </p>
                 </article>
-                <aside class="fact-box" aria-label="Resumo rapido">
+                <aside class="fact-box" aria-label="Resumo rápido">
                     <h3>Habilidades</h3>
                     <ul>
                         <li>HTML, CSS e JavaScript</li>
@@ -82,21 +86,37 @@
         <section class="section" id="fotos">
             <div class="section-heading">
                 <p class="eyebrow">Fotos</p>
-                <h2>Uma página pessoal tambem precisa ter rosto.</h2>
+                <h2>Uma página pessoal também precisa ter rosto.</h2>
             </div>
             <div class="gallery" aria-label="Galeria de fotos">
                 <figure>
-                    <img src="Imagens/Pfp-BAlvim.png" alt="Bernardo Alvim em foto de perfil">
+                    <img src="Imagens/Pfp-BAlvim.png" alt="Bernardo Alvim em foto de perfil" loading="lazy">
                     <figcaption>Perfil profissional</figcaption>
                 </figure>
                 <figure>
-                    <img src="Imagens/Estudante.JPG" alt="Retrato de Bernardo Alvim recebendo premiação">
+                    <img src="Imagens/Estudante.JPG" alt="Retrato de Bernardo Alvim recebendo premiação" loading="lazy">
                     <figcaption>Estudante de tecnologia</figcaption>
                 </figure>
                 <figure>
-                    <img src="Imagens/Atleta.JPG" alt="Foto de Bernardo Alvim jogando basquete">
+                    <img src="Imagens/Atleta.JPG" alt="Foto de Bernardo Alvim jogando basquete" loading="lazy">
                     <figcaption>Atleta</figcaption>
                 </figure>
+            </div>
+        </section>
+
+        <section class="section" id="video">
+            <div class="section-heading">
+                <p class="eyebrow">Vídeo</p>
+                <h2>Basquete, disciplina e mentalidade competitiva.</h2>
+            </div>
+            <div class="video-frame">
+                <iframe
+                    src="https://www.youtube.com/embed/dTRBnHtHehQ"
+                    title="Kobe Bryant fala sobre mentalidade, esforço e basquete"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
             </div>
         </section>
 
@@ -120,7 +140,7 @@
                         Planejamento de produto, levantamento de requisitos, criação de
                         personas e histórias de usuário para ciclo de front-end.
                     </p>
-                    <a href="https://github.com/bernardoalvimibmec/bulbe-squad-master" target="_blank" rel="noopener noreferrer">Ver repositorio</a>
+                    <a href="https://github.com/bernardoalvimibmec/bulbe-squad-master" target="_blank" rel="noopener noreferrer">Ver repositório</a>
                 </article>
                 <article class="info-card">
                     <h3>Intercâmbio nos EUA</h3>
@@ -140,7 +160,7 @@
             </div>
             <div class="focus-meter" aria-live="polite">
                 <button class="chip active" type="button" data-focus="Front-end">Front-end</button>
-                <button class="chip" type="button" data-focus="Automacao">Automacao</button>
+                <button class="chip" type="button" data-focus="Automação">Automação</button>
                 <button class="chip" type="button" data-focus="Produto">Produto</button>
                 <button class="chip" type="button" data-focus="Dados">Dados</button>
             </div>
